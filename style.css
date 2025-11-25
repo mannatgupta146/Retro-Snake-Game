@@ -68,4 +68,7 @@ main section .board {
 }
 main section .board .block {
   border: 1px solid var(--border-primary-color);
+}
+main section .board .fill {
+  background-color: var(--bg-fill-color);
 }/*# sourceMappingURL=style.css.map */
