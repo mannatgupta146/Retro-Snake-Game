@@ -95,9 +95,9 @@ function render(){
     })
 }
 
-intervalId = setInterval(() =>{
-    render()
-}, 300)
+// intervalId = setInterval(() =>{
+//     render()
+// }, 300)
 
 addEventListener('keydown', (event) =>{
     if(event.key === 'ArrowUp'){

@@ -75,4 +75,32 @@ main section .board .fill {
 }
 main section .board .food {
   background-color: var(--bg-food-color);
+}
+main .modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(53, 53, 53, 0.5294117647);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .modal .btn {
+  padding: var(--space-sm) var(--space-md);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .modal .btn:hover {
+  transform: scale(1.1);
+}
+main .modal .start-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
 }/*# sourceMappingURL=style.css.map */
