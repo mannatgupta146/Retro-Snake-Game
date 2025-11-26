@@ -109,6 +109,9 @@ main .modal {
   justify-content: center;
   align-items: center;
 }
+main .modal h3 {
+  font-size: 30px;
+}
 main .modal .btn {
   padding: var(--space-sm) var(--space-md);
   border: none;

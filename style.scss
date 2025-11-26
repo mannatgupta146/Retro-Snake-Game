@@ -120,6 +120,10 @@ main {
         justify-content: center;
         align-items: center;
 
+        h3{
+            font-size: 30px;
+        }
+
         .btn{
             padding: var(--space-sm) var(--space-md);
             border: none;
