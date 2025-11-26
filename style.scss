@@ -63,6 +63,9 @@ main {
                 padding: var(--space-sm) var(--space-md);
                 border: 1px solid var(--border-primary-color);           
                 border-radius: var(--border-radius-sm);
+                background-color: rgba(255, 255, 255, 0.02);
+                font-size: 14px;
+                letter-spacing: 0.5px;
             }
         }
 
@@ -72,17 +75,36 @@ main {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
             grid-template-rows: repeat(auto-fill, minmax(45px, 1fr));
+            background: #111111;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
 
             .block{
-                border: 1px solid var(--border-primary-color);
+                border: 1px solid rgba(51, 51, 51, 0.6);
+                background-color: #151515;
             }
 
             .fill{
                 background-color: var(--bg-fill-color);
+                border-radius: 50%;
+                transform: scale(0.96);
+                transition: transform 0.06s linear, box-shadow 0.06s linear;
+            }
+
+            .head{
+                /* slightly more focus on head */
+                background-color: var(--bg-fill-color);
+                border-radius: 50%;
+                transform: scale(1);
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
             }
 
             .food{
                 background-color: var(--bg-food-color);
+                border-radius: 50%;
+                transform: scale(0.9);
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+                animation: food-pulse 0.7s ease-in-out infinite alternate;
             }
         }
     }
@@ -104,6 +126,9 @@ main {
             border-radius: var(--border-radius-sm);
             cursor: pointer;
             transition: all 0.3s ease;
+            background-color: #f5f5f5;
+            color: #111;
+            font-weight: 500;
 
             &:hover{
                 transform: scale(1.1);
@@ -115,10 +140,24 @@ main {
             flex-direction: column;
             align-items: center;
             gap: var(--space-md);
+            padding: var(--space-2xl);
+            border-radius: var(--border-radius-md);
+            background-color: #111111;
+            border: 1px solid var(--border-primary-color);
         }
 
         .game-over{
             display: none;
         }
+    }
+}
+
+/* simple, clean food pulse */
+@keyframes food-pulse {
+    from{
+        transform: scale(0.85);
+    }
+    to{
+        transform: scale(0.95);
     }
 }
