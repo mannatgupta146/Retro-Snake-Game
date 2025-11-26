@@ -13,6 +13,7 @@ html, body {
   /* background-color */
   --bg-primary-color: #0c0c0c;
   --bg-fill-color: #fdfdfc;
+  --bg-food-color: #ff3b3b;
   /* text colors */
   --text-primary-color: #f0f0f0;
   /* spacing variables */
@@ -71,4 +72,7 @@ main section .board .block {
 }
 main section .board .fill {
   background-color: var(--bg-fill-color);
+}
+main section .board .food {
+  background-color: var(--bg-food-color);
 }/*# sourceMappingURL=style.css.map */

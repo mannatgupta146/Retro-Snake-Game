@@ -13,6 +13,7 @@ html, body {
     /* background-color */
     --bg-primary-color: #0c0c0c;
     --bg-fill-color: #fdfdfc;
+    --bg-food-color: #ff3b3b;
 
     /* text colors */
     --text-primary-color: #f0f0f0;
@@ -78,6 +79,10 @@ main {
 
             .fill{
                 background-color: var(--bg-fill-color);
+            }
+
+            .food{
+                background-color: var(--bg-food-color);
             }
         }
     }
