@@ -35,11 +35,9 @@ for(let row = 0; row < rows; row++){
     }
 }
 
-// let c1 = Math.floor(Math.random()*256)
-// let c2 = Math.floor(Math.random()*256)
-// let c3 = Math.floor(Math.random()*256)
-
-// document.documentElement.style.setProperty('--bg-fill-color', `rgb(${c1}, ${c2}, ${c3})`)
+// initial colors
+document.documentElement.style.setProperty('--bg-fill-color', `white`)
+document.documentElement.style.setProperty('--bg-food-color', `red`)
 
 function render(){
 
@@ -63,22 +61,41 @@ function render(){
     if(head.x<0 || head.x>=rows || head.y<0 || head.y>=cols){
         alert('Game Over')
         clearInterval(intervalId)
+        return
     }
 
-    if(head.x === food.x && head.y === food.y){
-        blocks[`${food.x}, ${food.y}`].classList.remove('food')
-        food = {x: Math.floor(Math.random()*rows), y: Math.floor(Math.random()*cols)}
-        blocks[`${food.x}, ${food.y}`].classList.add('food')
-        snake.unshift(head)
-    }
-
+    // remove old snake fill
     snake.forEach(segment => {
         blocks[`${segment.x}, ${segment.y}`].classList.remove('fill')
     })
 
-    snake.unshift(head)
-    snake.pop()
+    // eat food
+    if(head.x === food.x && head.y === food.y){
 
+        blocks[`${food.x}, ${food.y}`].classList.remove('food')
+        food = {x: Math.floor(Math.random()*rows), y: Math.floor(Math.random()*cols)}
+        blocks[`${food.x}, ${food.y}`].classList.add('food')
+
+        // generate new random colors
+        let s1 = Math.floor(Math.random()*256)
+        let s2 = Math.floor(Math.random()*256)
+        let s3 = Math.floor(Math.random()*256)
+
+        let f1 = Math.floor(Math.random()*256)
+        let f2 = Math.floor(Math.random()*256)
+        let f3 = Math.floor(Math.random()*256)
+
+        document.documentElement.style.setProperty('--bg-fill-color', `rgb(${s1}, ${s2}, ${s3})`)
+        document.documentElement.style.setProperty('--bg-food-color', `rgb(${f1}, ${f2}, ${f3})`)
+
+        snake.unshift(head)   // grow
+    }
+    else{
+        snake.unshift(head)
+        snake.pop()
+    }
+
+    // add new snake
     snake.forEach(segment => {
         blocks[`${segment.x}, ${segment.y}`].classList.add('fill')
     })
@@ -87,7 +104,6 @@ function render(){
 intervalId = setInterval(() =>{
     render()
 }, 300)
-
 
 addEventListener('keydown', (event) =>{
     if(event.key === 'ArrowUp'){
