@@ -111,6 +111,9 @@ main .modal {
 }
 main .modal h3 {
   font-size: 30px;
+  color: #c7c7c7;
+  line-height: 1.5;
+  padding: 0 var(--space-md);
 }
 main .modal .btn {
   padding: var(--space-sm) var(--space-md);
