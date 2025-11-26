@@ -36,7 +36,6 @@ for(let row = 0; row < rows; row++){
 }
 
 // initial colors
-document.documentElement.style.setProperty('--bg-fill-color', `white`)
 document.documentElement.style.setProperty('--bg-food-color', `red`)
 
 function render(){
@@ -77,15 +76,10 @@ function render(){
         blocks[`${food.x}, ${food.y}`].classList.add('food')
 
         // generate new random colors
-        let s1 = Math.floor(Math.random()*256)
-        let s2 = Math.floor(Math.random()*256)
-        let s3 = Math.floor(Math.random()*256)
-
         let f1 = Math.floor(Math.random()*256)
         let f2 = Math.floor(Math.random()*256)
         let f3 = Math.floor(Math.random()*256)
 
-        document.documentElement.style.setProperty('--bg-fill-color', `rgb(${s1}, ${s2}, ${s3})`)
         document.documentElement.style.setProperty('--bg-food-color', `rgb(${f1}, ${f2}, ${f3})`)
 
         snake.unshift(head)   // grow
