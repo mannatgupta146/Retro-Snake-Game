@@ -186,6 +186,9 @@ function restartGame() {
         blocks[`${food.x}, ${food.y}`].classList.remove('food')
     }
 
+    // set initial food color
+    document.documentElement.style.setProperty('--bg-food-color', `red`)
+
     // remove old snake from screen
     snake.forEach(segment => {
         if (blocks[`${segment.x}, ${segment.y}`]) {
